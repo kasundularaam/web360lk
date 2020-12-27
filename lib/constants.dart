@@ -22,9 +22,15 @@ class Constants{
   );
 
   static TextStyle lightBlue14Thin = new TextStyle(
-      fontWeight: FontWeight.w300,
+      fontWeight: FontWeight.w400,
       fontSize: 14.0,
       color: Colors.blue.shade200
+  );
+
+  static TextStyle white14Thin = new TextStyle(
+      fontWeight: FontWeight.w200,
+      fontSize: 14.0,
+      color: Colors.white
   );
 
   static TextStyle drkBlue16 = new TextStyle(
