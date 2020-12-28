@@ -63,4 +63,10 @@ class Constants{
     fontSize: 16.0,
     color: Colors.blue.shade900,
   );
+
+  static TextStyle gray22Bold = new TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 22.0,
+    color: Color(0xFF555555),
+  );
 }

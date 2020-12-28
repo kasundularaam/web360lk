@@ -7,6 +7,9 @@ import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
 import 'package:html/dom.dart' as dom;
 import 'package:web360lk/models/wp_brand.dart';
+import 'package:web360lk/screens/products_page.dart';
+import 'package:web360lk/screens/search_page.dart';
+import 'package:web360lk/screens/wp_brands_page.dart';
 import 'package:web360lk/widgets/product_view_big.dart';
 import 'package:web360lk/widgets/product_view_small.dart';
 import 'package:web360lk/widgets/product_view_stg.dart';
@@ -150,20 +153,30 @@ class _HomePageState extends State<HomePage> {
     switch(index){
       case 0:
         return
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 14.0,
-              right: 10.0,
-              bottom: 14.0,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Wordpress Brands",
-                  style: Constants.drkOrange20,),
-                Text("See All",
-                  style: Constants.seeAll,),
-              ],
+          InkWell(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => WpBrandsPage()
+                )
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 14.0,
+                right: 10.0,
+                bottom: 14.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Wordpress Brands",
+                    style: Constants.drkOrange20,),
+                  Text("See All",
+                    style: Constants.seeAll,),
+                ],
+              ),
             ),
           );
             break;
@@ -215,20 +228,31 @@ class _HomePageState extends State<HomePage> {
         break;
       case 2:
         return
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 14.0,
-              right: 10.0,
-              bottom: 14.0,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Featured Products",
-                  style: Constants.drkOrange20,),
-                Text("See All",
-                  style: Constants.seeAll,),
-              ],
+          InkWell(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductsPage(productType: "ALL_PRODUCTS",
+                      pageTitle: "All Products",)
+                  )
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 14.0,
+                right: 10.0,
+                bottom: 14.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Featured Products",
+                    style: Constants.drkOrange20,),
+                  Text("See All",
+                    style: Constants.seeAll,),
+                ],
+              ),
             ),
           );
         break;
@@ -253,7 +277,6 @@ class _HomePageState extends State<HomePage> {
                   );
                 }),
           );
-
         break;
       case 4:
         return
@@ -265,21 +288,33 @@ class _HomePageState extends State<HomePage> {
                   topLeft: Radius.circular(12.0)
                 )
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 14.0,
-                right: 10.0,
-                bottom: 14.0,
-                left: 5.0
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Best Selling Products",
-                    style: Constants.drkOrange20,),
-                  Text("See All",
-                    style: Constants.seeAll,),
-                ],
+            child: InkWell(
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProductsPage(
+                          productType: "BEST_SELLING_PRODUCTS",
+                          pageTitle: "Best Selling Products",)
+                    )
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 14.0,
+                  right: 10.0,
+                  bottom: 14.0,
+                  left: 5.0
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Best Selling Products",
+                      style: Constants.drkOrange20,),
+                    Text("See All",
+                      style: Constants.seeAll,),
+                  ],
+                ),
               ),
             ),
           );
@@ -322,21 +357,32 @@ class _HomePageState extends State<HomePage> {
         break;
       case 6:
         return
-          Padding(
-            padding: const EdgeInsets.only(
-                top: 14.0,
-                right: 10.0,
-                bottom: 14.0,
-                left: 5.0
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Plugins",
-                  style: Constants.drkOrange20,),
-                Text("See All",
-                  style: Constants.seeAll,),
-              ],
+          InkWell(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductsPage(productType: "ALL_PLUGINS",
+                      pageTitle: "Plugins",)
+                  )
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 14.0,
+                  right: 10.0,
+                  bottom: 14.0,
+                  left: 5.0
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Plugins",
+                    style: Constants.drkOrange20,),
+                  Text("See All",
+                    style: Constants.seeAll,),
+                ],
+              ),
             ),
           );
         break;
@@ -380,21 +426,32 @@ class _HomePageState extends State<HomePage> {
         break;
       case 8:
         return
-          Padding(
-            padding: const EdgeInsets.only(
-                top: 14.0,
-                right: 10.0,
-                bottom: 14.0,
-                left: 5.0
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Themes",
-                  style: Constants.drkOrange20,),
-                Text("See All",
-                  style: Constants.seeAll,),
-              ],
+          InkWell(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductsPage(productType: "ALL_THEMES",
+                      pageTitle: "Themes",)
+                  )
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 14.0,
+                  right: 10.0,
+                  bottom: 14.0,
+                  left: 5.0
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Themes",
+                    style: Constants.drkOrange20,),
+                  Text("See All",
+                    style: Constants.seeAll,),
+                ],
+              ),
             ),
           );
         break;
@@ -439,12 +496,10 @@ class _HomePageState extends State<HomePage> {
       default:
         return null;
     }
-
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     productListF = getProducts();
@@ -456,72 +511,121 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-          future: productListF,
-          builder: (context, productsSnapshot) {
-            if (productsSnapshot.hasError) {
-              return Container(
-                child: Center(
-                  child: Text("Something went wrong!\n" + "${productsSnapshot.error}",
-                    style: Constants.error14,),
-                ),
-              );
-            }
-            if (productsSnapshot.connectionState == ConnectionState.done) {
-              productListN = productsSnapshot.data;
-              featuredProductList = productListN.sublist(0,10);
-              bsProductList = productListN.sublist(10,15);
-              return Container(
-                color: Colors.blue,
-                child: SafeArea(
-                  child: ListView(
-                    children: [
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            children: [
-                              Text("Web360.Lk",
-                                  style: Constants.whiteBold22
-                              ),
-                              Text("The Best Digital Marketplace for Stunning Websites",
-                              style: Constants.lightBlue14Thin,)
-                            ],
+      body: Container(
+        color: Color(0xFFDDDDDD),
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Container(
+                child: FutureBuilder(
+                    future: productListF,
+                    builder: (context, productsSnapshot) {
+                      if (productsSnapshot.hasError) {
+                        return Container(
+                          child: Center(
+                            child: Text("Something went wrong!\n" + "${productsSnapshot.error}",
+                              style: Constants.error14,
+                              textAlign: TextAlign.center,),
                           ),
+                        );
+                      }
+                      if (productsSnapshot.connectionState == ConnectionState.done) {
+                        productListN = productsSnapshot.data;
+                        featuredProductList = productListN.sublist(0,10);
+                        bsProductList = productListN.sublist(10,15);
+                        return ListView(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              height: 65.0,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(
+                                left: 5.0,
+                                right: 5.0,
+                              ),
+                              child: SafeArea(
+                                child: Container(
+                                  child: ListView.builder(
+                                    physics: ClampingScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: 10,
+                                    itemBuilder: (context, index){
+                                      return _homeList(index);
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+
+                      return Container(
+                        width: double.infinity,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircularProgressIndicator(),
+                          ],
+                        ),
+                      );
+                    }
+                ),
+              ),
+
+              Align(
+                alignment: Alignment.topCenter,
+                child: Container(
+                  height: 60.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 2,
+                            spreadRadius: 1,
+                            offset: Offset(0,1)
+                        )
+                      ]
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: (){
+
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.menu,
+                            color: Color(0xFF555555),),
                         ),
                       ),
-
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            topRight: Radius.circular(20.0)
-                        ),
-                        child: Container(
-                          color: Color(0xFFDDDDDD),
-                          padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                          child: ListView.builder(
-                            physics: ClampingScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: 10,
-                            itemBuilder: (context, index){
-                              return _homeList(index);
-                            },
-                          ),
+                      Text("Web360.Lk",
+                        style: Constants.gray22Bold,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.search,
+                            color: Color(0xFF555555),),
                         ),
                       ),
                     ],
                   ),
                 ),
-              );
-            }
-
-            return Container(
-              child: Center(
-                child: CircularProgressIndicator(),
               ),
-            );
-          }
+            ],
+          ),
+        ),
       ),
     );
   }
